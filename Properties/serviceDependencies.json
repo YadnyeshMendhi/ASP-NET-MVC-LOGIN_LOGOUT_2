@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ASP_NET_MVC_LOGIN_LOGOUT_2ContextConnection"
+    }
+  }
+}

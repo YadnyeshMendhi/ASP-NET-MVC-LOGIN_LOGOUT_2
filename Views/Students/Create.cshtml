@@ -1,0 +1,69 @@
+﻿@model ASP_NET_MVC_LOGIN_LOGOUT_2.Models.Students
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Students</h4>
+<hr />
+
+ 
+<div class="jumbotron">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="StuFirstName" class="control-label"></label>
+                <input asp-for="StuFirstName" class="form-control" />
+                <span asp-validation-for="StuFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="StuLastName" class="control-label"></label>
+                <input asp-for="StuLastName" class="form-control" />
+                <span asp-validation-for="StuLastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="State" class="control-label"></label>
+                @* <input asp-for="State" class="form-control" /> *@
+                <span asp-validation-for="State" class="text-danger"></span>
+                @Html.DropDownListFor(temp => temp.State, new List<SelectListItem>
+                {
+                new SelectListItem{Text="Maharastra", Value="Maharastra"},
+                new SelectListItem{Text="Manipur", Value="Manipur"},
+                new SelectListItem{Text="Odisha", Value="Odisha"},
+                new SelectListItem{Text="Rajasthan", Value="Rajasthan"}},
+                "Please Select State", new {@class = "form-control"})
+                
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="submit" value="Create" class="btn btn-primary btn btn-block" />
+            </div>
+            <div class="form-group col-md-6">
+                <a asp-action="Index" class="btn btn-secondary btn btn-block">Back to List</a>
+            </div>
+        </div>
+        
+        
+
+
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

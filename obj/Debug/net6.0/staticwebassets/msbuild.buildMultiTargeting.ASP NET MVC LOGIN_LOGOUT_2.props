@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASP NET MVC LOGIN_LOGOUT_2.props" />
+</Project>
